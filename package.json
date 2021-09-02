@@ -1,0 +1,16 @@
+{
+  "name": "aws-sam-local",
+  "version": "1.0.0",
+  "description": "local serverless infrastructure",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Camilo Saa",
+  "license": "ISC",
+  "devDependencies": {
+    "aws-sdk": "^2.982.0",
+    "chai": "^4.3.4",
+    "mocha": "^9.1.1"
+  }
+}
