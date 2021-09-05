@@ -1,0 +1,14 @@
+[
+  {
+    "PetKey": { "S": "1" },
+    "Name": { "S": "Mirka" }
+  },
+  {
+    "PetKey": { "S": "2" },
+    "Name": { "S": "Lonia" }
+  },
+  {
+    "PetKey": { "S": "3" },
+    "Name": { "S": "Laika" }
+  }
+]

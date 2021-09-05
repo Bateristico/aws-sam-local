@@ -1,14 +1,12 @@
-  
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
   lamda local demo
-  
 
 Resources:
-  # lambda definition  
+  # lambda definition
   LambdaDemoFunction:
-    Type: AWS::Serverless::Function 
+    Type: AWS::Serverless::Function
     Properties:
       CodeUri: lambda/ # format is projectPath/
       Handler: lambda.lambdaHandler # format is filename.functionName
@@ -16,7 +14,7 @@ Resources:
 
   # api gateway definition
   ApiGatewayFunction:
-    Type: AWS::Serverless::Function 
+    Type: AWS::Serverless::Function
     Properties:
       CodeUri: apigateway/ # format is projectPath/
       Handler: apigateway.lambdaHandler # format is filename.functionName
@@ -27,3 +25,21 @@ Resources:
           Properties:
             Path: /hello
             Method: get
+
+    # dynamodb table\
+    DynamoDBTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        AttributeDefinitions:
+          - AttributeName: id
+            AttributeType: S
+          - AttributeDescription:
+            AttributeType: S
+        KeySchema:
+          - AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+        StreamSpecification:
+          StreamViewType: NEW_IMAGE

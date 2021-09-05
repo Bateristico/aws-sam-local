@@ -1,0 +1,1 @@
+aws dynamodb put-item --table-name Pets --item '{ "PetKey": {"S": "1"}, "Name": {"S": "Bill"}, "LastName": {"S": "Smith"} }' --return-consumed-capacity TOTAL --endpoint-url http://localhost:8000
